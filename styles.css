@@ -74,10 +74,14 @@
   
   body {
     margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-color: var(--beige);
     color: var(--black);
     text-align: center;
+  }
+  
+  h1, h2, h3, nav a, footer {
+    font-family: 'Baloo 2', cursive;
   }
   
   header {
