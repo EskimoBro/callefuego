@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calle Fuego</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <img src="images/calaca.png" alt="Description of photo 1" width="300">
-    <img src="images/CF.png" alt="Description of photo 2" width="300">
-    <img src="images/boxing.png" alt="Description of photo 2" width="300">
-    <img src="images/serrano.png" alt="Description of photo 2" width="300">
-    <img src="images/habanero.png" alt="Description of photo 2" width="300">
-    <img src="images/tucan.png" alt="Description of photo 2" width="300">
-    <img src="images/logolong.png" alt="Description of photo 2" width="300">
-    <img src="images/design.png" alt="Description of photo 2" width="300">
-    <img src="images/cactus.png" alt="Description of photo 2" width="300">
-    <img src="images/macha.png" alt="Description of photo 2" width="300">
-    <img src="images/poly.png" alt="Description of photo 2" width="300">
-    <img src="images/toro.png" alt="Description of photo 2" width="300">
-    <script src="script.js"></script>
+  <header>
+    <div class="logo">
+      <img src="assets/boxing.png" alt="Calle Fuego Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#delivery">Delivery Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="products">
+      <h2>Our Products</h2>
+      <div id="product-list"></div>
+    </section>
+
+    <section id="mission">
+      <h2>Our Mission</h2>
+      <p>Calle Fuego brings bold, fiery flavors to your table while celebrating culture, spice, and soul.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="assets/calaca.png" alt="Gallery 1" />
+        <img src="assets/design.png" alt="Gallery 2" />
+      </div>
+    </section>
+
+    <section id="delivery">
+      <h2>Delivery Information</h2>
+      <p>We ship across the U.S. Fresh batches made weekly. Orders processed within 2–3 days.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Calle Fuego. Made with heat.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
