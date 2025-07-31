@@ -91,7 +91,7 @@
   
   
   .logo img {
-    height: 100px;     /* Adjust this number to make it smaller or larger */
+    height: 500px;     /* Adjust this number to make it smaller or larger */
     width: auto;      /* Keeps aspect ratio correct */
     display: block;   /* Makes it behave nicely */
     margin: 0 auto 10px; /* Center logo & add small bottom spacing */
