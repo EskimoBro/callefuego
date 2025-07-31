@@ -167,6 +167,30 @@
   .gallery-grid img:hover {
     transform: scale(1.05);
   }
+
+  /* ===== Merch Section ===== */
+#merch {
+    margin-bottom: 60px;
+  }
+  
+  .merch-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .merch-gallery img {
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .merch-gallery img:hover {
+    transform: scale(1.05);
+  }
   
   /* ===== Footer ===== */
   footer {
