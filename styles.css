@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --beige: #f5edcf;
     --red: #b12a19;
     --black: #1a1a1a;
@@ -60,6 +60,117 @@
     text-align: center;
     padding: 15px;
   }
+ */
 
+
+
+
+
+  :root {
+    --beige: #f5edcf; /* Brand beige */
+    --red: #b12a19;   /* Brand red */
+    --black: #1a1a1a;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: var(--beige);
+    color: var(--black);
+    text-align: center;
+  }
+  
+  /* ===== Header ===== */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--red);
+    padding: 20px;
+    color: white;
+  }
+  
+  .logo img {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== Main Content ===== */
+  main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  section h2 {
+    margin-bottom: 20px;
+    color: var(--red);
+  }
+  
+  /* ===== Products ===== */
+  #product-list div {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  #product-list div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  /* ===== Gallery ===== */
+  .gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .gallery-grid img {
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    background-color: var(--red);
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
   
 
