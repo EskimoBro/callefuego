@@ -1,13 +1,13 @@
 [
     {
-      "name": "Original Fuego",
-      "description": "Classic red salsa with a smoky kick.",
-      "price": "$8"
+      "name": "Salsa Macha",
+      "description": "Blended mix of dried peppers and spices marinated in olive oil.",
+      "price": "$10"
     },
     {
-      "name": "Verde Caliente",
-      "description": "Green tomatillo salsa with jalapeño heat.",
-      "price": "$9"
+      "name": "Chiles Crujientes",
+      "description": "Dried, roasted, and blended pepper of your choice marinated in olive oil.",
+      "price": "$8"
     }
   ]
 
