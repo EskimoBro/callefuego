@@ -502,6 +502,19 @@ footer { background: var(--ink); color: var(--white); padding: 80px 56px 48px; }
   </div>
 </div>
 
+<form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="order"/>
+  <input type="text" name="bot-field"/>
+  <input type="text" name="customer_name"/>
+  <input type="text" name="phone"/>
+  <input type="text" name="delivery_type"/>
+  <input type="text" name="address"/>
+  <input type="text" name="items"/>
+  <input type="text" name="subtotal"/>
+  <input type="text" name="shipping"/>
+  <input type="text" name="total"/>
+  <input type="text" name="payment_method"/>
+</form>
 <script>
 const cardQty={'Salsa Macha':1,'Chiles Crujientes':1};
 let cart={},delivery='ship',payMethod='venmo';
@@ -586,12 +599,31 @@ function toStep2(){
 }
 function toStep1(){setStep(1);}
 function selPay(m){payMethod=m;document.getElementById('pcard-venmo').classList.toggle('sel',m==='venmo');document.getElementById('pcard-zelle').classList.toggle('sel',m==='zelle');}
+function submitOrderEmail(data){
+  const body=Object.keys(data).map(k=>encodeURIComponent(k)+'='+encodeURIComponent(data[k])).join('&');
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})
+    .catch(err=>console.error('Order email notification failed to send:',err));
+}
 function placeOrder(){
   const sub=getSubtotal(),ship=getShipping(),total=sub+ship;
   const handle=payMethod==='venmo'?'@diego-ampudia':'210-331-4422';
   const payLabel=payMethod==='venmo'?'Venmo':'Zelle';
   const items=Object.entries(cart).filter(([,i])=>i.qty>0).map(([n,i])=>`${n} ×${i.qty}`).join(', ');
   const addr=delivery==='pickup'?'Local Pickup — San Antonio, TX':`${document.getElementById('s-addr').value}, ${document.getElementById('s-city').value}, ${document.getElementById('s-state').value} ${document.getElementById('s-zip').value}`;
+  const customerName=delivery==='pickup'?document.getElementById('p-name').value:document.getElementById('s-name').value;
+  const phone=delivery==='pickup'?document.getElementById('p-phone').value:document.getElementById('s-phone').value;
+  submitOrderEmail({
+    'form-name':'order',
+    customer_name:customerName,
+    phone:phone,
+    delivery_type:delivery==='pickup'?'Local Pickup':'Ship',
+    address:addr,
+    items:items,
+    subtotal:'$'+sub.toFixed(2),
+    shipping:ship>0?'$'+ship.toFixed(2):'FREE',
+    total:'$'+total.toFixed(2),
+    payment_method:payLabel
+  });
   document.getElementById('confirm-box').innerHTML=`
     <h4>Order Details</h4>
     <div class="confirm-row"><span>Items</span><strong>${items}</strong></div>
